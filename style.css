@@ -1,0 +1,161 @@
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.bg {
+  background-image: url(./imgs/Homebg.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 100vh;
+}
+
+.header-con {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  position: relative;
+  z-index: 2;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-left: 100px;
+}
+
+.sidebar {
+  background-color: #030712;
+  height: 100%;
+  width: 80px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  overflow-x: hidden;
+  padding-top: 16px;
+}
+
+ul {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  padding-left: 10px;
+}
+
+.iconText {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease;
+  white-space: nowrap;
+  color: white;
+  position: relative;
+  left: 20px;
+}
+
+.sidebar:hover .iconText {
+  opacity: 1;
+  visibility: visible;
+}
+
+.sidebar:hover {
+  width: 200px;
+}
+
+a {
+  display: flex;
+  align-items: center;
+  color: white;
+  text-decoration: none;
+}
+
+a.active {
+  background-color: #374151;
+  color: white;
+  border-radius: 20px;
+  padding: 20px;
+  position: relative;
+  right: 5px;
+  height: 30px;
+}
+
+.searchinputCon {
+  background-color: #030712;
+  width: 500px;
+  padding: 20px;
+  border-radius: 10px;
+  position: relative; /* So .result can be positioned inside */
+  z-index: 10;
+}
+
+input {
+  border: none;
+  outline: none;
+  background-color: #030712;
+  color: #fff;
+  width: 100%;
+}
+
+.searchinputCon:focus-within {
+  border: 2px solid blue;
+}
+
+.bgContext {
+  display: flex;
+  justify-content: center;
+  color: white;
+  align-items: center;
+  margin-top: 50px;
+  font-size: 25px;
+}
+
+.sub {
+  color: #1D4ED8;
+}
+
+.result {
+  position: absolute;
+  width: 40%;
+  z-index: 9999;              /* Highest z-index so it's visible */
+  max-height: 300px;
+  background: rgba(255, 255, 255, 0.14);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  overflow: auto;
+  margin-top: 10px;
+}
+
+.result::-webkit-scrollbar {
+  display: none;
+}
+
+.result-item {
+  padding: 10px;
+  border-bottom: 1px solid #444;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-size: 18px;
+  transition: background 0.3s ease;
+}
+
+.result-item img {
+  width: 100px;
+  display: flex;
+}
+
+.result-item:hover {
+  /* background-color: #555; */
+}
+
+.not {
+  text-align: center;
+}
