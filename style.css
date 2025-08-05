@@ -158,6 +158,7 @@ input {
 .result-item img {
   width: 100px;
   display: flex;
+
 }
 
 .not {
@@ -211,6 +212,7 @@ input {
 .movie-img {
   width: 100%;
   border-radius: 5px;
+  cursor: pointer;
 }
 
 .movie-title {
@@ -235,3 +237,4 @@ input {
 .star{
 color: blue;
 }
+

@@ -48,29 +48,26 @@ LoadingIndicator.style.display = 'none'
 
 let Api_keys = '1966e9143c28d8e33a6fe2ddf564d571';
 let html = '';
-
+const goToDetails =(id)=>{
+window.location.href = `movie.html?id=${id}`;
+}
 const  Discover = async ()=>{
 const response = await fetch(`https://api.themoviedb.org/3/discover/movie?api_key=${Api_keys}`);
 const Movie = await response.json();
 console.log(Movie.results);
 for( let movie of Movie.results ){
 html += `
-  <div class="movie-card">
+  <div class="movie-card" onclick="goToDetails(${movie.id})">
     <img class="movie-img" src="https://image.tmdb.org/t/p/w500${movie.poster_path}" alt="${movie.title}" />
-    <h3 class="movie-title"><i class="fa star fa-star-o" style="font-size:20px "></i> ${movie.
-popularity
-}
+    <h3 class="movie-title"><i class="fa star fa-star-o" style="font-size:20px "></i> ${movie.vote_average}
+
   </h3>
     <p class="movie-year">Release: ${movie.release_date}</p>
   </div>
 `;
-
-}
 FirstSet.innerHTML = html;
+}
+
 }
 Discover()
 
-// ${items.title}
-// ${items.
-// overview}
-/* <img  class='s' src="https://image.tmdb.org/t/p/w500${items.poster_path}" alt="${items.title}" /> */

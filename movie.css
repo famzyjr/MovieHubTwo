@@ -1,0 +1,38 @@
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+#movieDetailContainer {
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+}
+
+.movie-description {
+    display: flex;
+    justify-content: center;
+    margin-left: 100px;
+}
+
+#movieDetailContainer img {
+    width: 300px;
+    border-radius: 3px;
+    margin-top: 20px;
+}
+
+.review {
+width:500px;
+font-size: 20px;
+}
+
+.ss {
+    margin-top: 100px;
+}
+
+.name {
+    position: relative;
+    left: 140px;
+}
