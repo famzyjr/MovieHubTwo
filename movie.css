@@ -1,0 +1,158 @@
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+#loadingindicator .loader {
+  text-align: center;
+  position: relative;
+  top: 200px;
+  left: 200px;
+}
+
+.sss{
+display: flex;
+justify-content: center;
+align-items: center;
+position: relative;
+top: 250px;
+}
+.a{
+margin-top: 50px;
+}
+.loader{
+background-color: #030712;
+}
+
+.movieDetailContainer{
+display: flex;
+justify-content: center;
+}
+
+.movie-description{
+display: flex;
+justify-content: center;
+gap: 50px;
+}
+.m{
+width: 300px;
+margin-left: 90px;
+margin-top: 20px;
+}
+.name{
+width: 500px;
+}
+
+.ff{
+display: flex;
+justify-content: center;
+flex-direction: column;
+}
+
+.loader {
+  width: 48px;
+  height: 48px;
+  border: 5px solid #FFF;
+  border-radius: 50%;
+  display: inline-block;
+  box-sizing: border-box;
+  position: relative;
+  animation: pulse 1s linear infinite;
+}
+
+.loader {
+  width: 96px;
+  box-sizing: content-box;
+  height: 48px;
+  background: #FFF;
+  border-color: #030712;
+  border-style: solid;
+  border-width: 2px 2px 50px 2px;
+  border-radius: 100%;
+  position: relative;
+  animation: 3s yinYang linear infinite;
+}
+.loader:before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  background: #FFF;
+  border: 18px solid #030712;
+  border-radius: 100%;
+  width: 12px;
+  height: 12px;
+  box-sizing: content-box;
+}
+.loader:after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  background: #030712;
+  border: 18px solid #FFF;
+  border-radius: 100%;
+  width: 12px;
+  height: 12px;
+  box-sizing: content-box;
+}
+@keyframes yinYang {
+  100%{transform: rotate(360deg)}
+}
+.sidebar {
+  background-color: #030712;
+  height: 100%;
+  width: 80px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  overflow-x: hidden;
+  padding-top: 16px;
+  z-index: 10;
+
+}
+
+ul {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  padding-left: 10px;
+}
+
+.iconText {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease;
+  white-space: nowrap;
+  color: white;
+  position: relative;
+  left: 20px;
+}
+
+.sidebar:hover .iconText {
+  opacity: 1;
+  visibility: visible;
+}
+
+.sidebar:hover {
+  width: 200px;
+}
+
+a {
+  display: flex;
+  align-items: center;
+  color: white;
+  text-decoration: none;
+}
+
+a.active {
+  background-color: #374151;
+  color: white;
+  border-radius: 20px;
+  padding: 20px;
+  position: relative;
+  right: 5px;
+  height: 30px;
+}

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Bookmarked Movies</title>
+  <link rel="stylesheet" href="/book.css" />
+</head>
+<body>
+  <h1>Bookmarked Movies</h1>
+  <div id="bookmarks" class="movie-grid"></div>
+  <a href="index.html">← Back to Discover</a>
+
+  <script>
+    const bookmarksContainer = document.getElementById('bookmarks');
+    const saved = JSON.parse(localStorage.getItem('bookmarkedMovies')) || [];
+
+    if (saved.length === 0) {
+      bookmarksContainer.innerHTML = '<p>No bookmarks yet.</p>';
+    } else {
+      bookmarksContainer.innerHTML = saved.map(movie => `
+        <div class="movie-card">
+          <img class="movie-img" src="https://image.tmdb.org/t/p/w500${movie.posterPath}" alt="${movie.title}" />
+          <h3>${movie.title}</h3>
+        </div>
+      `).join('');
+    }
+  </script>
+</body>
+</html>

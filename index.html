@@ -38,30 +38,39 @@
     </div>
     <div class="sidebar">
       <ul>
-        <a href="#home" class="button" onclick="setActive(this)"><i class="fa fa-fw fa-home fa-2x"></i> <span
+        <a href="#/index.html" class="button" onclick="setActive(this)"><i class="fa fa-fw fa-home fa-2x"></i> <span
             class="iconText">Home</span></a>
-        <a href="#home" class="button" onclick="setActive(this)"><i class="fa fa-fw fa-home fa-2x"></i> <span
-            class="iconText">Home</span></a>
-        <a href="#home" class="button" onclick="setActive(this)"><i class="fa fa-fw fa-home fa-2x"></i> <span
-            class="iconText">Home</span></a>
-        <a href="#home" class="button" onclick="setActive(this)"><i class="fa fa-fw fa-home fa-2x"></i> <span
-            class="iconText">Home</span></a>
-        <a href="#home" class="button" onclick="setActive(this)"><i class="fa fa-fw fa-home fa-2x"></i> <span
-            class="iconText">Home</span></a>
-        <a href="#home" class="button" onclick="setActive(this)"><i class="fa fa-fw fa-home fa-2x"></i> <span
-            class="iconText">Home</span></a>
+        <a href="#home" class="button" onclick="setActive(this)"><i class="fa fa-fw fa-fire fa-2x"></i> <span
+            class="iconText">Trending Today</span></a>
+        <a href="#home" class="button" onclick="setActive(this)"><i class="fa fa-fw fa-star fa-2x"></i> <span
+            class="iconText">Top Rated</span></a>
+        <a href="#home" class="button" onclick="setActive(this)"> <span
+            class="iconText">In Theaters</span></a>
+        <a href="#about" class="button" onclick="setActive(this)"><i class="fa fa-fw fa-tv fa-2x"></i> <span
+            class="iconText">Tv Series</span></a>
+        <a href="/bookmark.html" class="button" onclick="setActive(this)"><i class="fa fa-fw fa-clipboard-check fa-2x"></i> <span
+            class="iconText">Bookmarks</span></a>
       </ul>
     </div>
     <div class="bgContext">
-      <h1><span class="sub">What</span> would you like to watch today</h1>
+      <h1><span class="sub">What</span>would you like <span class="l"> to watch today</span></h1>
     </div>
   </div>
   <div class="text">
     Trending Movies
   </div>
+
   <div class="firstSet" id="firstSet">
+     <div   class="loadingDetails">
+   
+   <span id="loadingindicator" class="loader"></span>
   </div>
   </div>
+ 
+  <div id="firstSetDetails"></div>
+  
+  </div>
+
   <script src="app.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 </body>
