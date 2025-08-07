@@ -237,4 +237,85 @@ input {
 .star{
 color: blue;
 }
+.firstSet{
+height: 500px;
+}
 
+
+.rr{
+  position: relative;
+  left: 60px;
+  color: #1D4ED8;
+}
+.loader {
+  width: 96px;
+  box-sizing: content-box;
+  height: 48px;
+  background: #FFF;
+  border-color: #030712;
+  border-style: solid;
+  border-width: 2px 2px 50px 2px;
+  border-radius: 100%;
+  position: relative;
+  animation: 3s yinYang linear infinite;
+}
+.loader:before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  background: #FFF;
+  border: 18px solid #030712;
+  border-radius: 100%;
+  width: 12px;
+  height: 12px;
+  box-sizing: content-box;
+}
+.loader:after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  background: #030712;
+  border: 18px solid #FFF;
+  border-radius: 100%;
+  width: 12px;
+  height: 12px;
+  box-sizing: content-box;
+}
+@keyframes yinYang {
+  100%{transform: rotate(360deg)}
+}
+.loadingDetails{
+margin-top: 200px;
+}
+
+@media screen and (max-width: 1025px) {
+  h1{
+    /* background-color: red; */
+    width: 500px;
+    
+  }
+  .l{
+    /* color: red; */
+  margin-left: 50px;
+  /* position: relative;
+  left: 50px; */
+  }
+}
+
+@media screen and (max-width: 867px){
+  .header-con{
+    /* background-color: red; */
+    display: flex;
+    flex-direction: column;
+  }
+  .searchinputCon{
+    margin-left: 100px;
+    margin-top: 20px;
+  }
+  
+.result{
+  margin-left: 200px;
+}
+}
