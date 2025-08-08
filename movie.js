@@ -30,7 +30,7 @@ setTimeout(() => {
     } catch (error) {
       error.log;
     } finally {
-      Loadingindicator.style.display = 'none';
+      // Loadingindicator.style.display = 'none';
 
     }
   }
