@@ -4,6 +4,7 @@ body {
   padding: 0;
   box-sizing: border-box;
   font-family: 'Montserrat', sans-serif;
+  background-color: rgb(65, 50, 202);
 }
 
 /* ===== Background ===== */
@@ -204,49 +205,29 @@ input {
 }
 
 .loader {
-  width: 96px;
+  width: 48px;
   height: 48px;
-  background: #FFF;
-  border-color: #030712;
-  border-style: solid;
-  border-width: 2px 2px 50px 2px;
-  border-radius: 100%;
+  display: inline-block;
   position: relative;
-  animation: 3s yinYang linear infinite;
-  box-sizing: content-box;
-}
-
-.loader:before,
-.loader:after {
-  content: "";
-  position: absolute;
-  top: 50%;
-  border-radius: 100%;
-  width: 12px;
-  height: 12px;
-  box-sizing: content-box;
-}
-
-.loader:before {
-  left: 0;
   background: #FFF;
-  border: 18px solid #030712;
+  box-sizing: border-box;
+  animation: flipX 1s linear infinite;
 }
 
-.loader:after {
-  left: 50%;
-  background: #030712;
-  border: 18px solid #FFF;
-}
-
-@keyframes yinYang {
+@keyframes flipX {
+  0% {
+    transform: perspective(200px) rotateX(0deg) rotateY(0deg);
+  }
+  50% {
+    transform: perspective(200px) rotateX(-180deg) rotateY(0deg);
+  }
   100% {
-    transform: rotate(360deg);
+    transform: perspective(200px) rotateX(-180deg) rotateY(-180deg);
   }
 }
 
-.loadingDetails {
-  margin-top: 200px;
+.movie{
+  height: 300px;
 }
 
 /* ===== Movie Cards ===== */
@@ -278,12 +259,24 @@ input {
   font-size: 14px;
   color: #9ca3af;
 }
+.loadingDetails{
+  display: flex;
+  justify-content: center;
+}
 
 #firstSet {
-  display: flex;
+  /* display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 20px;
+  gap: 20px; */
+    display: grid;
+  grid-template-columns: repeat(4, 1fr);
+grid-template-rows: repeat(2, 1fr);
+grid-column-gap: 0px;
+grid-row-gap: 0px;
+justify-content: center;
+align-items: center; 
+ padding-left: 200px; 
 }
 
 .star {

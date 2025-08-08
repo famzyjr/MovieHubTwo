@@ -62,12 +62,13 @@ function bookmarkMovie(id, title, posterPath) {
   localStorage.setItem('bookmarkedMovies', JSON.stringify(saved));
   alert(`${title} bookmarked!`);
 }
-const loAdingindicator = document.getElementById('loAdingindicator')
+const loAdingindicator = document.getElementById('load')
 let ApIkeys = '1966e9143c28d8e33a6fe2ddf564d571';
 
 const Discover = async () => {
-  // loAdingindicator.style.display = 'block';
-  try {
+ 
+  try { 
+    loAdingindicator.style.display = 'block';
     const response = await fetch(`https://api.themoviedb.org/3/discover/movie?api_key=${ApIkeys}`);
     const data = await response.json();
     console.log(data);
@@ -79,7 +80,7 @@ const Discover = async () => {
       html += `
         <div class="movie-card">
           <img class="movie-img" src="https://image.tmdb.org/t/p/w500${movie.poster_path}" alt="${movie.title}" onclick="goToDetails(${movie.id})" />
-          <h3>${movie.title}</h3>
+          <h3 class=''>${movie.title}</h3>
           <p>Release: ${movie.release_date}</p>
           <button onclick="bookmarkMovie(${movie.id}, '${safeTitle}', '${movie.poster_path}')">🔖 Bookmark</button>
         </div>
@@ -90,10 +91,10 @@ const Discover = async () => {
   } catch (error) {
     console.error(error);
   } finally {
-    // loAdingindicator.style.display = 'none';
+    loAdingindicator.style.display = 'none';
   }
 };
 
 setTimeout(() => {
   Discover() 
-}, 3000);
+}, 5000);
