@@ -30,11 +30,11 @@ setTimeout(() => {
     } catch (error) {
       error.log;
     } finally {
-      // Loadingindicator.style.display = 'none';
+      Loadingindicator.style.display = 'none';
 
     }
   }
   getMovieDetails(movieId);
-}, 3000)
+}, 5000)
 
 
