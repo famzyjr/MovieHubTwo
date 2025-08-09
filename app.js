@@ -96,4 +96,4 @@ const Discover = async () => {
 
 setTimeout(() => {
   Discover() 
-}, 1000);
+}, 2000);
