@@ -80,8 +80,7 @@ const Discover = async () => {
       html += `
         <div class="movie-card">
           <img class="movie-img" src="https://image.tmdb.org/t/p/w500${movie.poster_path}" alt="${movie.title}" onclick="goToDetails(${movie.id})" />
-          <h3 class=''>${movie.title}</h3>
-          <p>Release: ${movie.release_date}</p>
+          <p class='release'>Release: ${movie.release_date}</p>
           <button onclick="bookmarkMovie(${movie.id}, '${safeTitle}', '${movie.poster_path}')">🔖 Bookmark</button>
         </div>
       `;
@@ -97,4 +96,4 @@ const Discover = async () => {
 
 setTimeout(() => {
   Discover() 
-}, 5000);
+}, 1000);

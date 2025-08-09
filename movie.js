@@ -26,7 +26,7 @@ setTimeout(() => {
       
       
     </div>
-  `;
+  `
     } catch (error) {
       error.log;
     } finally {
@@ -35,6 +35,6 @@ setTimeout(() => {
     }
   }
   getMovieDetails(movieId);
-}, 5000)
+}, 3000)
 
 
