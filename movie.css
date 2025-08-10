@@ -25,20 +25,26 @@ margin-top: 50px;
 background-color: #030712;
 }
 
-.movieDetailContainer{
-display: flex;
-justify-content: center;
+.container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .movie-description{
+margin: 20px;
 display: flex;
 justify-content: center;
+align-items: center;
 gap: 50px;
+}
+.review{
+  width: 500px;
 }
 .m{
 width: 300px;
-margin-left: 90px;
-margin-top: 20px;
+/* margin-left: 90px; */
+/* margin-top: 20px; */
 }
 .name{
 width: 500px;
@@ -103,7 +109,7 @@ flex-direction: column;
 .sidebar {
   background-color: #030712;
   height: 100%;
-  width: 80px;
+  width: 50px;
   position: fixed;
   z-index: 1;
   top: 0;
@@ -155,4 +161,26 @@ a.active {
   position: relative;
   right: 5px;
   height: 30px;
+}
+
+@media screen and (max-width: 958px) {
+.review{
+  width: 400px;
+}
+.m{
+  width: 200px;
+}
+.movie-description{
+  display: flex;
+  align-items: center;
+  justify-items: center;
+}
+}
+@media screen and (max-width: 840px) {
+.review{
+  width: 400px;
+}
+.m{
+  width: 200px;
+}
 }
