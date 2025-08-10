@@ -14,12 +14,10 @@ setTimeout(() => {
       const movie = await res.json();
       container.innerHTML = `
  <div class="movie-description">
-
       <img class='m' src="https://image.tmdb.org/t/p/w500${movie.poster_path}" alt="${movie.title}" />
-    
      <div class='ff'> 
      <h1 class='name'>${movie.title}</h1>
-      <p class='review'><strong>Overview:</strong> ${movie.overview.slice(0, 500)}</p>
+      <p class='review'><strong>Discription:</strong> ${movie.overview.slice(0, 500)}</p>
       <p><strong>Release Date:</strong> ${movie.release_date} ;</p>  
       <p><strong>Rating:</strong> ${movie.vote_average} ;</p>
       </div>
@@ -28,13 +26,15 @@ setTimeout(() => {
     </div>
   `
     } catch (error) {
+      let err = 'No Result Found'
       error.log;
+      FirstSet.innerHTML = `${err}`
     } finally {
       Loadingindicator.style.display = 'none';
 
     }
   }
   getMovieDetails(movieId);
-}, 3000)
+}, 1000)
 
 

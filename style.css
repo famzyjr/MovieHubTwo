@@ -52,7 +52,10 @@ body {
 .sidebar:hover {
   width: 200px;
 }
-
+.nullResult{
+  color:white;
+  font-size: 20px;
+}
 ul {
   display: flex;
   flex-direction: column;
