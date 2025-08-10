@@ -40,7 +40,7 @@ Search.addEventListener('input', async () => {
   } catch (error) {
      let errs = 'No Result Found'
       error.log;
-      FirstSet.innerHTML = `<p class='nullResult'>${errs}</p>`
+      Results.innerHTML = `<p class='nullResult'>${errs}</p>`
   } finally {
     LoadingIndicator.style.display = 'block'
   }
