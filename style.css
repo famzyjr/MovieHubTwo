@@ -4,7 +4,7 @@ body {
   padding: 0;
   box-sizing: border-box;
   font-family: 'Montserrat', sans-serif;
-  background-color: rgb(65, 50, 202);
+  background-color: #0307125e;
 }
 
 /* ===== Background ===== */
@@ -52,9 +52,12 @@ body {
 .sidebar:hover {
   width: 200px;
 }
-.nullResult{
+.nullResult,.nullResul{
   color:white;
   font-size: 20px;
+}
+.nullResul{
+  text-align: center;
 }
 ul {
   display: flex;

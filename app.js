@@ -40,7 +40,7 @@ Search.addEventListener('input', async () => {
   } catch (error) {
      let errs = 'No Result Found'
       error.log;
-      Results.innerHTML = `<p class='nullResult'>${errs}</p>`
+      Results.innerHTML = `<p class='nullResul'>${errs}</p>`
   } finally {
     LoadingIndicator.style.display = 'block'
   }
@@ -93,7 +93,7 @@ const Discover = async () => {
     console.error(error);
      let err = 'No Result Found'
       error.log;
-      FirstSet.innerHTML = `<p class='nullResult'>${err}</p>`
+      FirstSet.innerHTML = `<p class='nullResult'>😑${err}</p>`
   } finally {
     loAdingindicator.style.display = 'none';
   }
@@ -101,4 +101,4 @@ const Discover = async () => {
 
 setTimeout(() => {
   Discover() 
-}, 2000);
+}, 3000);
