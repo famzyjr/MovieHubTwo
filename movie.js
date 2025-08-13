@@ -2,9 +2,21 @@ const params = new URLSearchParams(window.location.search);
 const movieId = params.get('id');
 const container = document.getElementById('movieDetailContainer');
 const Loadingindicator = document.getElementById('loadingindicator');
+let open  = document.getElementById('open');
+let BTN = document.getElementById('btn')
+let Closebtn = document.getElementById('closbtn');
 let Api_keys = '1966e9143c28d8e33a6fe2ddf564d571';
 
 Loadingindicator.style.display = 'block';
+function setActive(e) {
+  const buttons = document.querySelectorAll('.button');
+  buttons.forEach(button => {
+    button
+      .classList.remove('active');
+  }
+  )
+  e.classList.add('active')
+}
 setTimeout(() => {
 
   async function getMovieDetails(id) {
@@ -34,7 +46,27 @@ setTimeout(() => {
 
     }
   }
+  const Sidebar =() =>{
+   open.style.display = 'block';
+  }
+  const close =()=>{
+    open.style.display = 'none';
+  }
+  BTN.onclick =()=> Sidebar()
+ Closebtn.onclick =()=> close()
   getMovieDetails(movieId);
 }, 3000)
 
 
+
+
+const API_KEY = '1966e9143c28d8e33a6fe2ddf564d571';
+const keywordId = 123;  // example keyword ID
+const url = `https://api.themoviedb.org/3/keyword/${keywordId}discover/tv?api_key=19f84e11932abbc79e6d83f82d6d1045&with_networks=213`;
+
+fetch(url)
+  .then(res => res.json())
+  .then(data => {
+    console.log(data.results); // array of movies tagged with that keyword
+  })
+  .catch(err => console.error(err));

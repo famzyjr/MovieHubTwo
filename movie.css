@@ -164,9 +164,37 @@ a.active {
   height: 30px;
 }
 
+#btn{
+  display: none;
+
+}
+#closbtn{
+  display: none;
+}
+.material-icons{
+  color: #fff;
+  cursor: pointer;
+}
+
 .con{
 height: 0px;
 }
+
+@media screen and (max-width: 970px){
+.sidebar{
+  display: none;
+  transition: left 300ms ease-out;
+}
+#closbtn{
+  display: block;
+}
+#btn{
+  display: block;  
+  z-index: 10;
+}
+
+}
+
 
 @media screen and (max-width: 958px) {
 .review{

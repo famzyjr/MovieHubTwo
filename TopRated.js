@@ -71,7 +71,7 @@ const Discover = async () => {
  
   try { 
     loAdingindicator.style.display = 'block';
-    const response = await fetch(`https://api.themoviedb.org/3/discover/movie?api_key=${ApIkeys}`);
+    const response = await fetch(`https://api.themoviedb.org/3/movie/top_rated?api_key=19f84e11932abbc79e6d83f82d6d1045&language=en-US&page=1`);
     const data = await response.json();
     console.log(data);
     
@@ -83,7 +83,6 @@ const Discover = async () => {
         <div class="movie-card">
           <img class="movie-img" src="https://image.tmdb.org/t/p/w500${movie.poster_path}" alt="${movie.title}" onclick="goToDetails(${movie.id})" />
           <p class='release'>Release: ${movie.release_date}</p>
-          
           <button onclick="bookmarkMovie(${movie.id}, '${safeTitle}', '${movie.poster_path}')">🔖 Bookmark</button>
         </div>
       `;
@@ -98,11 +97,9 @@ const Discover = async () => {
   } finally {
     loAdingindicator.style.display = 'none';
   }
-  const Sidebar =() =>{
-   open.style.display = 'block';
-  }
 };
 
 setTimeout(() => {
   Discover() 
 }, 3000);
+
