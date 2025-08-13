@@ -9,35 +9,38 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
         rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 </head>
 
 <body>
- <div class="con">
-    
-     <!-- <div class="sidebar">
-      <ul>
-        <a href="/index.html" class="button" onclick="setActive(this)"><i class="fa fa-fw fa-home fa-2x"></i> <span
-            class="iconText">Home</span></a>
-        <a href="#home" class="button" onclick="setActive(this)"><i class="fa fa-fw fa-fire fa-2x"></i> <span
-            class="iconText">Trending Today</span></a>
-        <a href="#home" class="button" onclick="setActive(this)"><i class="fa fa-fw fa-star fa-2x"></i> <span
-            class="iconText">Top Rated</span></a>
-        <a href="#home" class="button" onclick="setActive(this)"> <span
-            class="iconText">In Theaters</span></a>
-        <a href="#about" class="button" onclick="setActive(this)"><i class="fa fa-fw fa-tv fa-2x"></i> <span
-            class="iconText">Tv Series</span></a>
-        <a href="/bookmark.html" class="button" onclick="setActive(this)"><i class="fa fa-fw fa-clipboard-check fa-2x"></i> <span
-            class="iconText">Bookmarks</span></a>
-      </ul>
-    </div> -->
-    <div class="sss">
-        <!-- <span class="loader"> -->
-        <span id="loadingindicator" class="loader"></span>
+    <div class="con">
 
-        </span>
+        <!-- <button  id="btn">open sidebar</button > -->
+        <i class="fa fa-fw fa-bars fa-2x" id="btn"></i>
+        <div id="open" class="sidebar">
+
+            <ul>
+                <i id="closbtn" class="material-icons">close</i>
+                <a href="index.html" class="button" onclick="setActive(this)"><i class="fa fa-fw fa-home fa-2x"></i>
+                    <span class="iconText">Home</span></a>
+                <a href="Trending.html" class="button" onclick="setActive(this)"><i class="fa fa-fw fa-fire fa-2x"></i>
+                    <span class="iconText">Trending Today</span></a>
+                <a href="TopRated.html" class="button" onclick="setActive(this)"><i class="fa fa-fw fa-star fa-2x"></i>
+                    <span class="iconText">Top Rated</span></a>
+
+
+                <a href="bookmark.html" class="button" onclick="setActive(this)"><i id="closbtn"
+                        class="material-icons">bookmark</i><span class="iconText">Bookmarks</span></a>
+            </ul>
+        </div>
+        <div class="sss">
+            <!-- <span class="loader"> -->
+            <span id="loadingindicator" class="loader"></span>
+
+            </span>
+        </div>
+        <div id="movieDetailContainer"></div>
     </div>
-    <div id="movieDetailContainer"></div>
- </div>
 
     <script src="movie.js"></script>
 </body>

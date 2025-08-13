@@ -83,7 +83,6 @@ const Discover = async () => {
         <div class="movie-card">
           <img class="movie-img" src="https://image.tmdb.org/t/p/w500${movie.poster_path}" alt="${movie.title}" onclick="goToDetails(${movie.id})" />
           <p class='release'>Release: ${movie.release_date}</p>
-          
           <button onclick="bookmarkMovie(${movie.id}, '${safeTitle}', '${movie.poster_path}')">🔖 Bookmark</button>
         </div>
       `;
@@ -98,11 +97,8 @@ const Discover = async () => {
   } finally {
     loAdingindicator.style.display = 'none';
   }
-  const Sidebar =() =>{
-   open.style.display = 'block';
-  }
 };
 
 setTimeout(() => {
   Discover() 
-}, 3000);
+}, 20000);

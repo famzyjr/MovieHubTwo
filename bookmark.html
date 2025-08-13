@@ -5,6 +5,29 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Bookmarked Movies</title>
   <link rel="stylesheet" href="/book.css" />
+  <style>
+    .delete-btn {
+      margin-top: 10px;
+      padding: 5px 10px;
+      background-color: #e63946;
+      color: white;
+      border: none;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+    .delete-btn:hover {
+      background-color: #d62828;
+    }
+    .movie-card {
+      display: inline-block;
+      text-align: center;
+      margin: 10px;
+    }
+    .movie-img {
+      max-width: 150px;
+      border-radius: 8px;
+    }
+  </style>
 </head>
 <body>
   <h1>Bookmarked Movies</h1>
@@ -13,18 +36,30 @@
 
   <script>
     const bookmarksContainer = document.getElementById('bookmarks');
-    const saved = JSON.parse(localStorage.getItem('bookmarkedMovies')) || [];
+    let saved = JSON.parse(localStorage.getItem('bookmarkedMovies')) || [];
 
-    if (saved.length === 0) {
-      bookmarksContainer.innerHTML = '<p>No bookmarks yet.</p>';
-    } else {
-      bookmarksContainer.innerHTML = saved.map(movie => `
+    function renderBookmarks() {
+      if (saved.length === 0) {
+        bookmarksContainer.innerHTML = '<p>No bookmarks yet.</p>';
+        return;
+      }
+
+      bookmarksContainer.innerHTML = saved.map((movie, index) => `
         <div class="movie-card">
           <img class="movie-img" src="https://image.tmdb.org/t/p/w500${movie.posterPath}" alt="${movie.title}" />
           <h3>${movie.title}</h3>
+          <button class="delete-btn" onclick="deleteBookmark(${index})">Delete</button>
         </div>
       `).join('');
     }
+
+    function deleteBookmark(index) {
+      saved.splice(index, 1); // Remove from array
+      localStorage.setItem('bookmarkedMovies', JSON.stringify(saved)); // Update localStorage
+      renderBookmarks(); // Re-render
+    }
+
+    renderBookmarks();
   </script>
 </body>
 </html>
