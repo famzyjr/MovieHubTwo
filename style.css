@@ -316,7 +316,7 @@ justify-content: center;
 @media screen and (max-width: 860px) {
 .pas{
   width: 200px;
-  background-color: red;
+
 }
 
 }
@@ -363,7 +363,7 @@ justify-content: center;
   .pas{
   text-align: center;
   width: 300px;
-  background-color: red;
+  
 }
 }
 
