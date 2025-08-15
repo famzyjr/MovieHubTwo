@@ -29,7 +29,7 @@ Search.addEventListener('input', async () => {
       Results.innerHTML = data.Search.map(items => (`
 <div class='result-item data-id=${data.imbdID}'>
 <img  src="${items.Poster}" />(${items.Year})
-<div>${items.Title}</div>
+<div><p class='pas'>${items.Title}</p></div>
 
 </div>
     `)).join('')
