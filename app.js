@@ -4,6 +4,8 @@ const MovieDetails = document.getElementById('movieDetails');
 const First = document.getElementById('firstSet');
 const LoadingIndicator = document.getElementById('loadingIndicator');
 const FirstSet = document.getElementById('firstSet');
+const closBtn = document.getElementById('closbtn')
+const open  = document.getElementById('o')
 
 const ApiKey = '677cef6d';
 function setActive(e) {
@@ -15,6 +17,9 @@ function setActive(e) {
   )
   e.classList.add('active')
 }
+
+
+
 Search.addEventListener('input', async () => {
   const query = Search.value.trim();
   LoadingIndicator.style.display = 'block';
@@ -29,7 +34,7 @@ Search.addEventListener('input', async () => {
       Results.innerHTML = data.Search.map(items => (`
 <div class='result-item data-id=${data.imbdID}'>
 <img  src="${items.Poster}" />(${items.Year})
-<div>${items.Title}</div>
+<div><p class='pas'>${items.Title}</p></div>
 
 </div>
     `)).join('')
@@ -47,7 +52,24 @@ Search.addEventListener('input', async () => {
 
 })
 
+Results.addEventListener('click', async (e) => {
+  const target = e.target.closest('.result-item');
+  if (!target) return;
 
+  const movieId = target.getAttribute('data-id');
+  const res = await fetch(`https://www.omdbapi.com/?i=${movieId}&apikey=${ApIkeys}`);
+  const movie = await res.json();
+  MovieDetails.innerHTML = `
+    <h2>${movie.Title} (${movie.Year})</h2>
+    <img src="${movie.Poster}" />
+    <p><strong>Plot:</strong> ${movie.Plot}</p>
+    <p><strong>Actors:</strong> ${movie.Actors}</p>
+    <p><strong>Released:</strong> ${movie.Released}</p>
+  `;
+
+  Results.innerHTML = '';
+  Search.value = '';
+});
 
 function goToDetails(id) {
   window.location.href = `movie.html?id=${id}`;
@@ -98,9 +120,7 @@ const Discover = async () => {
   } finally {
     loAdingindicator.style.display = 'none';
   }
-  const Sidebar =() =>{
-   open.style.display = 'block';
-  }
+  
 };
 
 setTimeout(() => {

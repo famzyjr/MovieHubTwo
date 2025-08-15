@@ -2,11 +2,11 @@ const params = new URLSearchParams(window.location.search);
 const movieId = params.get('id');
 const container = document.getElementById('movieDetailContainer');
 const Loadingindicator = document.getElementById('loadingindicator');
-let open  = document.getElementById('open');
-let BTN = document.getElementById('btn')
-let Closebtn = document.getElementById('closbtn');
+let Closebtn = document.getElementById('closebtn');
 let Api_keys = '1966e9143c28d8e33a6fe2ddf564d571';
-
+let Sidebar  = document.getElementById('sidebar');
+const closBtn = document.getElementById('closbtn')
+const open  = document.getElementById('openbtn');
 Loadingindicator.style.display = 'block';
 function setActive(e) {
   const buttons = document.querySelectorAll('.button');
@@ -27,12 +27,14 @@ setTimeout(() => {
       container.innerHTML = `
  <div class="movie-description">
       <img class='m' src="https://image.tmdb.org/t/p/w500${movie.poster_path}" alt="${movie.title}" />
-     <div class='ff'> 
+     <div className="fl">
+      <div class='ff'> 
      <h1 class='name'>${movie.title}</h1>
       <h2 class='review'><strong>Discription:</strong> ${movie.overview.slice(0, 500)}</h2>
       <p><strong>Release Date:</strong> ${movie.release_date} ;</p>  
       <p><strong>Rating:</strong> ${movie.vote_average} ;</p>
       </div>
+     </div>
       
       
     </div>
@@ -46,16 +48,23 @@ setTimeout(() => {
 
     }
   }
-  const Sidebar =() =>{
-   open.style.display = 'block';
+
+  const openSidebar =()=>{
+    Sidebar.classList.add('show');
+    Sidebar.style.display = 'block';
+    console.log('t')
   }
-  const close =()=>{
-    open.style.display = 'none';
+  const closeSidbar =()=>{
+    Sidebar.classList.remove('show');
+    Sidebar.style.display = 'none';
+    
   }
-  BTN.onclick =()=> Sidebar()
- Closebtn.onclick =()=> close()
+
+  open.onclick=()=> openSidebar()
+  Closebtn.onclick=()=> closeSidbar()
+
   getMovieDetails(movieId);
-}, 3000)
+}, 1000)
 
 
 
